@@ -9,7 +9,7 @@ namespace SimpleCalculator
         {
             InputConverter    Converter = new InputConverter();
             CalculatorEngine Calculator = new CalculatorEngine();
-           
+
 
             try
             {
@@ -22,6 +22,16 @@ namespace SimpleCalculator
 
                 Console.WriteLine(result);
 
+            }
+            catch (ArgumentException ex)
+            {
+                //TDOO: START LOGGING EXCEPTIONS
+                Console.WriteLine(ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                //TDOO: START LOGGING EXCEPTIONS
+                Console.WriteLine(ex.Message);
             }
             catch (Exception ex)
             {
