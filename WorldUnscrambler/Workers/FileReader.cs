@@ -1,13 +1,29 @@
 ﻿
 using System;
+using System.IO;
 
 namespace WorldUnscrambler.Workers
 {
     public class FileReader
     {
-        internal string[] Read(string fileName)
+        public string[] Read(string fileName)
         {
-            throw new NotImplementedException();
+            string[] fileContent;
+
+            try
+            {
+                fileContent = File.ReadAllLines(fileName);
+            }
+            catch (FileNotFoundException ex)
+            {
+                throw new FileNotFoundException(ex.Message,ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return fileContent;
         }
     }
 }

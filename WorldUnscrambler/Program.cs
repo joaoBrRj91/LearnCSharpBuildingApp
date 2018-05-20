@@ -10,7 +10,8 @@ namespace WorldUnscrambler
     //TODO : Refactoring this code because this is not clean.
     class Program
     {
-
+   
+  
         private static readonly FileReader fileReader = new FileReader();
         private static readonly WordMacther wordMatcher = new WordMacther();
         private const string worldListFileName = "wordlist.txt";
@@ -22,7 +23,7 @@ namespace WorldUnscrambler
             do
             {
 
-                  
+
                 Console.WriteLine("Please enter the option - F for file and M for Manual.");
                 var option = (Console.ReadLine() ?? string.Empty);
 
@@ -54,8 +55,8 @@ namespace WorldUnscrambler
 
 
                 } while (
-                           !continueWordUnscrambleDecision.Equals("Y",StringComparison.OrdinalIgnoreCase) &&
-                           !continueWordUnscrambleDecision.Equals("N",StringComparison.OrdinalIgnoreCase));
+                           !continueWordUnscrambleDecision.Equals("Y", StringComparison.OrdinalIgnoreCase) &&
+                           !continueWordUnscrambleDecision.Equals("N", StringComparison.OrdinalIgnoreCase));
 
 
                 continueWordUnscramble = (continueWordUnscrambleDecision.Equals("Y", StringComparison.OrdinalIgnoreCase));
@@ -75,7 +76,7 @@ namespace WorldUnscrambler
 
         }
 
-      
+
         private static void ExecuteScrambleWordsInFileScenario()
         {
             var fileName = (Console.ReadLine() ?? string.Empty);
